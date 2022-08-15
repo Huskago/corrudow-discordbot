@@ -4,7 +4,7 @@
   "description": "Le bot discord du jeu de rôle CorruDow",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js --color",
+    "start": "node index.js",
     "dev": "pm2 start index.js -- --color --name corrudow-assistant --watch && pm2 logs 1"
   },
   "author": "Huskago",
