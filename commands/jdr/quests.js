@@ -1,5 +1,4 @@
 const { Client, BaseInteraction } = require("discord.js");
-const { ApplicationCommandOptionType, EmbedBuilder } = require("discord.js");
 const Logger = require("../../utils/Logger");
 
 module.exports = {
@@ -9,7 +8,7 @@ module.exports = {
   onlyOwner: false,
   cooldown: 20,
   usage: "quests [@user]",
-  // examples: ["quests", "quests @Huskago"],
+  examples: ["quests", "quests @Huskago"],
   // options: [
   //   {
   //     name: "user",
@@ -24,16 +23,17 @@ module.exports = {
    * @param {BaseInteraction} interaction 
    */
   runInteraction: async (client, interaction) => {
-    interaction.reply({ content: "Le système de quête est en cours de développement.", ephemeral: true });
-    // const target = interaction.options.getUser("user");
-    // if (!target) {
-    //   const user = await client.getUser(interaction.member.id);
-    //   if (!user) {
-    //     Logger.error(`Impossible de récupérer l'utilisateur ${interaction.member.id}`);
-    //     return interaction.reply("Impossible de récupérer l'utilisateur.");
-    //   }
-    //   quests = user.quests;
-    //   console.log(quests);
-    // }
+    if (interaction.member.id !== "409778282800742408") {
+      interaction.reply({ content: "Le système de quête est en cours de développement.", ephemeral: true });
+    } else {
+      const target = interaction.options.getUser("user") || interaction.member.user;
+      const userId = target.id;
+
+      const user = await client.getUser(userId);
+
+      if (!user) return interaction.reply({ content: "L'utilisateur n'existe pas.", ephemeral: true });
+
+      interaction.reply("Voici les quêtes disponibles :");
+    }
   },
 };

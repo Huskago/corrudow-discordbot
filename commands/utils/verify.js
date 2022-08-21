@@ -1,4 +1,4 @@
-const { EmbedBuilder, ApplicationCommandType, ApplicationCommandOptionType } = require("discord.js");
+const { ApplicationCommandType, ApplicationCommandOptionType, BaseInteraction, Client, EmbedBuilder } = require("discord.js");
 const Logger = require("../../utils/Logger");
 
 module.exports = {
@@ -17,6 +17,11 @@ module.exports = {
       required: true
     }
   ],
+  /**
+   * 
+   * @param {Client} client 
+   * @param {BaseInteraction} interaction 
+   */
   runInteraction: async (client, interaction) => {
     if (interaction.channel.id !== "1000811945571659917") return interaction.reply({ content: "Cette commande n'est pas disponible dans ce channel.", ephemeral: true });
     

@@ -1,4 +1,4 @@
-const { ApplicationCommandOptionType } = require("discord.js");
+const { ApplicationCommandOptionType, BaseInteraction, Client } = require("discord.js");
 
 module.exports = {
   name: "clear",
@@ -24,6 +24,11 @@ module.exports = {
       required: false
     }
   ],
+  /**
+   * 
+   * @param {Client} client 
+   * @param {BaseInteraction} interaction 
+   */
   runInteraction: async (client, interaction) => {
     const amountToDelete = interaction.options.getInteger("message");
     if (amountToDelete > 100 || amountToDelete < 0) return interaction.reply({ content: "Vous devez entrer un nombre entre 0 et 100.", ephemeral: true });

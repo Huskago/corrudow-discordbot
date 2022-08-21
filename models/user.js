@@ -1,4 +1,4 @@
-const mongoose =require('mongoose');
+const mongoose = require('mongoose');
 
 const userSchema = mongoose.Schema({
   id: String,
@@ -8,7 +8,7 @@ const userSchema = mongoose.Schema({
   group: String,
   level: { 'type': Number, 'default': 0 },
   exp: { 'type': Number, 'default': 0 },
-  quests: [{id: Number, completed: Boolean, completedAt: Date, title: String, description: String, reward: String}],
+  quests: [{ id: { 'type': mongoose.Types.ObjectId, 'default': 1 }, completed: { 'type': Boolean, 'default': false }, completedAt: { 'type': Date, 'default': Date.now() }, title: { 'type': String, 'default': "Le titre de la quête" }, description: { 'type': String, 'default': "La description de la quête" }, reward: { 'type': String, 'default': "100€" } }],
 });
 
 module.exports = mongoose.model('User', userSchema);

@@ -1,4 +1,4 @@
-const { ApplicationCommandOptionType } = require("discord.js");
+const { ApplicationCommandOptionType, BaseInteraction, Client } = require("discord.js");
 
 module.exports = {
   name: "emit",
@@ -24,6 +24,11 @@ module.exports = {
       ]
     }
   ],
+  /**
+   * 
+   * @param {Client} client 
+   * @param {BaseInteraction} interaction 
+   */
   runInteraction: async (client, interaction) => {
     const eventChoices = interaction.options.getString('event');
 

@@ -1,4 +1,4 @@
-const { ApplicationCommandOptionType, EmbedBuilder } = require("discord.js");
+const { ApplicationCommandOptionType, BaseInteraction, Client, EmbedBuilder } = require("discord.js");
 const { readdirSync } = require("fs");
 const commandFolder = readdirSync("./commands");
 
@@ -18,6 +18,11 @@ module.exports = {
       required: false
     }
   ],
+  /**
+   * 
+   * @param {Client} client 
+   * @param {BaseInteraction} interaction 
+   */
   runInteraction: async (client, interaction) => {
     const commandName = interaction.options.getString("command");
 

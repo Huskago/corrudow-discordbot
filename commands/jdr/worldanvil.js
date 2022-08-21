@@ -1,5 +1,5 @@
-const { Client, BaseInteraction } = require("discord.js");
-const { ApplicationCommandOptionType, EmbedBuilder } = require("discord.js");
+const {  } = require("discord.js");
+const { Client, BaseInteraction, EmbedBuilder } = require("discord.js");
 const Logger = require("../../utils/Logger");
 
 module.exports = {

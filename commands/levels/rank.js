@@ -1,4 +1,4 @@
-const { ApplicationCommandOptionType, BaseInteraction, Client, EmbedBuilder, AttachmentBuilder } = require("discord.js");
+const { ApplicationCommandOptionType, BaseInteraction, Client, AttachmentBuilder } = require("discord.js");
 const Logger = require("../../utils/Logger");
 const canvacord = require("canvacord");
 

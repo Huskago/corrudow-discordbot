@@ -55,7 +55,7 @@ module.exports = {
     const userName = interaction.guild.members.cache.get(userId).user.username;
 
     const user = await client.getUser(userId);
-
+    
     if (user) return interaction.reply({content: `L'utilisateur ${userId} existe déjà !`, ephemeral: true});
 
     await interaction.reply({ content: "En cours de création...", fetchReply: true });

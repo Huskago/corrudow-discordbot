@@ -1,4 +1,4 @@
-const { EmbedBuilder } = require("discord.js");
+const { BaseInteraction, Client, EmbedBuilder } = require("discord.js");
 const Logger = require("../../utils/Logger");
 
 module.exports = {
@@ -10,6 +10,11 @@ module.exports = {
   cooldown: 20,
   usage: "ping",
   examples: ["ping"],
+  /**
+   * 
+   * @param {Client} client 
+   * @param {BaseInteraction} interaction 
+   */
   runInteraction: async (client, interaction) => {
     try {
       const pingMessage = await interaction.reply({ content: "En cours de ping...", fetchReply: true });
