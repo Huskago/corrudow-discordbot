@@ -17,6 +17,10 @@ module.exports = {
     const user = interaction.member.user;
     const target = interaction.guild.members.cache.random().user;
 
+    if (user.id === target.id) {
+      target = interaction.guild.members.cache.random().user;
+    }
+
     await interaction.reply({ content: `Calcul en cours...`, fetchReply: true })
 
     const love = Math.random() * 100;

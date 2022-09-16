@@ -23,7 +23,7 @@ module.exports = {
             { name: "la salope de tiberius", type: ActivityType.Playing },
             { name: "Huskago, notre dieu à tous !", type: ActivityType.Watching },
             { name: "Huskago, notre dieu à tous !", type: ActivityType.Listening },
-            { name: `${client.guilds.cache.get("1000768975963164803").roles.cache.get("1000810183779438793").members.size.toFixed()} joueurs !`, type: ActivityType.Listening },
+            { name: `${client.guilds.cache.get("1000768975963164803").roles.cache.get("1000810183779438793").members.filter(member => !member.user.bot).size.toFixed()} joueurs !`, type: ActivityType.Listening },
         ];
 
         setInterval(() => {
