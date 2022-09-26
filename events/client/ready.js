@@ -20,7 +20,7 @@ module.exports = {
         const statuses = [
             { name: "de la musique avec les Shadow", type: ActivityType.Listening },
             { name: "à aider Huskago", type: ActivityType.Playing },
-            { name: `la version ${process.env.npm_package_version}`, type: ActivityType.Watching },
+            { name: `la version ${client.version}`, type: ActivityType.Watching },
             { name: "la salope de tiberius", type: ActivityType.Playing },
             { name: "Huskago, notre dieu à tous !", type: ActivityType.Watching },
             { name: "Huskago, notre dieu à tous !", type: ActivityType.Listening },

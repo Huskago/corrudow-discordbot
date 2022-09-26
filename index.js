@@ -1,10 +1,12 @@
 const { Client, Collection, Partials } = require("discord.js");
 require('dotenv').config()
+const { version } = require('./package.json');
 const mongoose = require("mongoose");
 const client = new Client({ intents: 3276799, partials: [Partials.Message, Partials.Channel, Partials.Reaction] });
 const Logger = require("./utils/Logger");
 
 client.config = require("./config.json");
+client.version = version;
 
 ["commands", "buttons", "selects"].forEach(x => client[x] = new Collection());
 ['CommandUtil', 'EventUtil', 'ButtonUtil', 'SelectUtil'].forEach(handler => { require(`./utils/handlers/${handler}`)(client) });
