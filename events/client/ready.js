@@ -11,8 +11,8 @@ module.exports = {
      * @param {Client} client 
      */
     async execute(client) {
-        console.log("Bot Starting...");
         Logger.client(`- Prêt à être utilisé avec la version ${client.version} !`);
+        console.log("Bot Starting...");
 
         const devGuild = client.guilds.cache.get('1000768975963164803');
         devGuild.commands.set(client.commands.map(command => command));
