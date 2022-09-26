@@ -3,6 +3,10 @@
   "version": "0.9.2",
   "description": "Le bot discord du jeu de rôle CorruDow",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Huskago/corrudow-discordbot.git"
+  },
   "scripts": {
     "start": "node index.js",
     "dev": "pm2 start index.js --name corrudow-assistant -- --color --watch && pm2 logs 1"
