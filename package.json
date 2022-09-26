@@ -9,9 +9,6 @@
   },
   "author": "Huskago",
   "license": "MIT",
-  "engines": {
-    "node": "16.x"
-  },
   "dependencies": {
     "canvacord": "5.4.3",
     "chalk": "4.1.2",
