@@ -11,8 +11,8 @@ module.exports = {
      * @param {Client} client 
      */
     async execute(client) {
-        // Logger.client("- Prêt à être utilisé");
         console.log("Bot Starting...");
+        Logger.client("- Prêt à être utilisé");
 
         const devGuild = client.guilds.cache.get('1000768975963164803');
         devGuild.commands.set(client.commands.map(command => command));
